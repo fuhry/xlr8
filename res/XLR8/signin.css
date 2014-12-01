@@ -1,0 +1,41 @@
+div.signin {
+	text-align: center;
+}
+
+div.signin h1 {
+	font-size: 72pt;
+}
+
+div.signin h2 {
+	font-size: 48pt;
+}
+
+div.signin div.chiclets {
+	padding-bottom: 2em;
+}
+
+div.signin div.chiclets a.btn {
+	margin: 10px;
+	font-size: 36pt;
+	font-family: dejavu sans mono, monospace;
+}
+
+div.signin div.page.homework div.subject {
+	font-size: 24pt;
+	padding: 30px 0;
+	clear: both;
+}
+
+div.signin div.page.homework div.subject label {
+	text-align: left;
+}
+
+div.signin div.page.homework div.subject .btn-group .btn {
+	font-size: 24pt;
+	padding: 7px 14px;
+}
+
+div.signin div.submission {
+	padding-top: 30px;
+	clear: both;
+}

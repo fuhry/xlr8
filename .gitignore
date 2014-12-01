@@ -1,0 +1,8 @@
+/vendor/
+/temp/
+/components/
+/coverage/
+
+# Rename Configuration.example.php to Configuration.php and add your own
+# database information.
+/src/XLR8/Configuration.php
