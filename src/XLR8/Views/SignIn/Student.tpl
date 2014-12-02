@@ -19,6 +19,8 @@
 		
 		<div class="chiclets">
 		</div>
+		
+		<a class="btn btn-danger btn-lg" href="{$app_root}/SignIn/Student">Go back</a>
 	</div>
 	
 	<div class="page homework">
@@ -27,57 +29,12 @@
 		<div class="homework">
 			
 			<form method="post" enctype="multipart/form-data" action="{$app_root}/SignIn/StudentPost">
-				<div class="subject">
-					<label class="subject-label col-lg-4 col-md-6 col-sm-4 col-sm-offset-2 col-xs-6">
-						<i class="fa fa-book"></i>
-						<span>Reading</span>
-					</label>
-					<div class="btn-group col-lg-8 col-md-6 col-sm-6 col-xs-6" data-toggle="buttons">
-						<label class="btn btn-default active"><input type="radio" name="subject[reading]" value="0" checked="checked" />None</label>
-						<label class="btn btn-default"><input type="radio" name="subject[reading]" value="1" />A little</label>
-						<label class="btn btn-default"><input type="radio" name="subject[reading]" value="2" />A lot</label>
-					</div>
-				</div>
-				
-				<div class="subject">
-					<label class="subject-label col-lg-4 col-md-6 col-sm-4 col-sm-offset-2 col-xs-6">
-						<i class="fa fa-calculator"></i>
-						<span>Math</span>
-					</label>
-					<div class="btn-group col-lg-8 col-md-6 col-sm-6 col-xs-6" data-toggle="buttons">
-						<label class="btn btn-default active"><input type="radio" name="subject[math]" value="0" checked="checked" />None</label>
-						<label class="btn btn-default"><input type="radio" name="subject[math]" value="1" />A little</label>
-						<label class="btn btn-default"><input type="radio" name="subject[math]" value="2" />A lot</label>
-					</div>
-				</div>
-				
-				<div class="subject">
-					<label class="subject-label col-lg-4 col-md-6 col-sm-4 col-sm-offset-2 col-xs-6">
-						<i class="fa fa-bug"></i>
-						<span>Science</span>
-					</label>
-					<div class="btn-group col-lg-8 col-md-6 col-sm-6 col-xs-6" data-toggle="buttons">
-						<label class="btn btn-default active"><input type="radio" name="subject[science]" value="0" checked="checked" />None</label>
-						<label class="btn btn-default"><input type="radio" name="subject[science]" value="1" />A little</label>
-						<label class="btn btn-default"><input type="radio" name="subject[science]" value="2" />A lot</label>
-					</div>
-				</div>
-				
-				<div class="subject">
-					<label class="subject-label col-lg-4 col-md-6 col-sm-4 col-sm-offset-2 col-xs-6">
-						<i class="fa fa-graduation-cap"></i>
-						<span>Other subjects</span>
-					</label>
-					<div class="btn-group col-lg-8 col-md-6 col-sm-6 col-xs-6" data-toggle="buttons">
-						<label class="btn btn-default active"><input type="radio" name="subject[other]" value="0" checked="checked" />None</label>
-						<label class="btn btn-default"><input type="radio" name="subject[other]" value="1" />A little</label>
-						<label class="btn btn-default"><input type="radio" name="subject[other]" value="2" />A lot</label>
-					</div>
-				</div>
+				{include file="SignIn/Subjects.tpl"}
 				
 				<div class="text-center submission">
 					<input type="hidden" class="signin-user-id" name="user_id" value="" />
 					<input type="submit" class="btn btn-primary btn-lg" value="All done &ndash; sign in" />
+					<a class="btn btn-danger btn-lg" href="{$app_root}/SignIn/Student">Go back</a>
 				</div>
 			</form>
 			

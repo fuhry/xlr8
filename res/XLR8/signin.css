@@ -39,3 +39,8 @@ div.signin div.submission {
 	padding-top: 30px;
 	clear: both;
 }
+
+div.signin div.page.registration div.subject {
+	padding: 10px 0;
+	clear: both;
+}

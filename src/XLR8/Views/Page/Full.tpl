@@ -52,11 +52,8 @@
 			</div>
 		</nav>
 		<div class="container-fluid">
-			{foreach $messages as $msg}
-				<div class="alert alert-{$message_levels[$msg['level']]}">
-					{$msg['message']|escape:'html'}
-				</div>
-			{/foreach}
+			{include file="Messages.tpl"}
+			
 			{if isset($page)}
 				{include file="$page.tpl"}
 			{else}

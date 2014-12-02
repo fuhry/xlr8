@@ -34,8 +34,9 @@ CREATE TABLE guardians(
 CREATE TABLE homework(
 	homework_id bigint(20) unsigned NOT NULL auto_increment,
 	attendance_id int(12) unsigned NOT NULL,
-	subject ENUM('reading', 'math', 'science', 'other') NOT NULL,
+	subject enum('language','math','science','social') NOT NULL,
 	amount tinyint(1) unsigned NOT NULL,
+	need_pc tinyint(1) unsigned NOT NULL DEFAULT 0,
 	PRIMARY KEY ( homework_id ),
 	CONSTRAINT FOREIGN KEY ( attendance_id ) REFERENCES attendance ( record_id ) ON DELETE CASCADE
 );
