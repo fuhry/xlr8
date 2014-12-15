@@ -53,6 +53,12 @@
 							{$user->get('surname')|escape:'html'},
 							{$user->get('given_name')|escape:'html'}
 						</a>
+						{if $count >= $perfect_threshold}
+							<span class="label label-warning">
+								<i class="fa fa-star"></i>
+								Perfect!
+							</span>
+						{/if}
 					</td>
 					<td>
 						{$count}

@@ -165,6 +165,14 @@ class Attendance extends Framework\AbstractController
 		$Smarty->assign('nights_attended', $stackRanks);
 		$Smarty->assign('students', $students);
 		
+		// Figure out how many nights XLR8 has taken place in this month
+		$stmt = $DB->prepare('SELECT DISTINCT date FROM attendance WHERE date >= :month_start AND date <= :month_end');
+		if ( !$stmt->execute(['month_start' => $month_start, 'month_end' => $month_end]) ) {
+			throw new Database\Exception($stmt);
+		}
+		
+		$Smarty->assign('perfect_threshold', $stmt->rowCount());
+		
 		$Smarty->display("Page/Full.tpl");
 	}
 }
