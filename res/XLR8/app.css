@@ -1,0 +1,57 @@
+/* Everywhere */
+th.actions, td.actions {
+	text-align: center;
+}
+
+/* Console/welcome page */
+
+div.console-buttons a {
+	display: block;
+	padding: 1%;
+	width: 30%;
+	float: left;
+}
+
+	div.console-buttons a:hover {
+		background-color: #f0f0f0;
+		text-decoration: none;
+	}
+	
+	div.console-buttons a span.title, div.console-buttons a span.description {
+		display: block;
+	}
+	
+	div.console-buttons a span.title {
+		font-size: 16pt;
+	}
+
+/* Calendar page */
+
+/* 1em of padding below the month change buttons */
+.padded-bottom {
+	padding-bottom: 1em;
+}
+
+	/* height requirements for calendar cells */
+	table.calendar tbody tr {
+		height: 10em;
+	}
+	
+	table.calendar tbody td {
+		width: 14.2857%; /* 1/7 */
+	}
+	
+	table.calendar tbody td span.dom {
+		font-weight: 700;
+		font-size: 14pt;
+	}
+	
+	table.calendar tbody td.future {
+		background-color: #cdf;
+	}
+	
+	table.calendar tbody td.today {
+		background-color: #eee;
+	}
+
+/* Attendance view page */

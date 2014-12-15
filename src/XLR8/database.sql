@@ -16,6 +16,7 @@ CREATE TABLE attendance(
 	`date` date NOT NULL,
 	user_id int(12) unsigned NOT NULL,
 	behavior_score tinyint(1) unsigned NOT NULL,
+	notes mediumtext DEFAULT NULL,
 	PRIMARY KEY ( record_id ),
 	UNIQUE KEY ( `date`, user_id ),
 	CONSTRAINT FOREIGN KEY ( user_id ) REFERENCES users ( user_id ) ON DELETE CASCADE
