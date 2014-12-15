@@ -315,8 +315,11 @@ abstract class AbstractModel
 			throw new LogicException("Cannot delete a row that is nonexistent.");
 		}
 		
-		$stmt = $this->prepare("DELETE FROM `{$this->getTable()}` WHERE {$this->getPrimaryKey()} = :id;");
-		$stmt->execute($this->getID());
+		$stmt = $this->DB->prepare("DELETE FROM `{$this->getTable()}` WHERE {$this->getPrimaryKey()} = :id;");
+		
+		if ( !$stmt->execute(['id' => $this->getID()]) ) {
+			throw new Database\Exception($stmt);
+		}
 		
 		if ( $this->columns[ $this->getPrimaryKey() ] instanceof Database\Types\Integer && 
 				$this->columns[ $this->getPrimaryKey() ]->isAutoIncrement() ) {

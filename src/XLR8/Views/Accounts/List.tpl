@@ -22,6 +22,9 @@
 				<a title="Edit" href="{$app_root}/Accounts/Edit/{$user->getID()}" class="btn btn-primary btn-xs">
 					<i class="fa fa-pencil"></i>
 				</a>
+				<a title="Delete" href="{$app_root}/Accounts/Delete/{$user->getID()}" class="btn btn-danger btn-xs">
+					<i class="fa fa-remove"></i>
+				</a>
 			</td>
 		</tr>
 		{/foreach}

@@ -1,5 +1,7 @@
 <h1>Edit user: {$userToEdit->get('given_name')|escape:'html'} {$userToEdit->get('surname')|escape:'html'}</h1>
 
+<script type="text/javascript" src="{$app_root}/res/XLR8/account-edit.js"></script>
+
 <form method="post" enctype="multipart/form-data" class="form-horizontal" autocomplete="off">
 	<fieldset>
 		<legend>User attributes</legend>
@@ -26,9 +28,19 @@
 		</div>
 		
 		<div class="form-group">
+			<label class="control-label col-lg-3">Email address:</label>
+			<div class="form-controls col-lg-6">
+				<input {if $userToEdit->getID() === $user->getID()}disabled="disabled"{/if} type="text" name="attrs[email]" class="form-control" value="{if $userToEdit->get('email') != null}{$userToEdit->get('email')|escape:'html'}{/if}" />
+				{if $userToEdit->getID() === $user->getID()}
+					<p class="help-block">To change your email address, use the <a href="{$app_root}/Session/ManageAccount">Manage Account</a> page.</p>
+				{/if}
+			</div>
+		</div>
+		
+		<div class="form-group">
 			<label class="control-label col-lg-3">User type:</label>
 			<div class="form-controls col-lg-1 col-md-2 col-sm-2 col-xs-4">
-				<select class="form-control" name="attrs[role]">
+				<select class="form-control" name="attrs[role]" id="accounts-edit-role">
 					{foreach array('student', 'parent', 'leader', 'administrator') as $role}
 						<option value="{$role}"{if $role == $userToEdit->get('role')} selected="selected"{/if}>{ucfirst($role)}</option>
 					{/foreach}
@@ -69,12 +81,12 @@
 			<label class="control-label col-lg-3">Login allowed:</label>
 			<div class="form-controls col-lg-6 checkbox">
 				<label>
-					<input type="checkbox" name="password[login_ok]" {if $userToEdit->get('password') !== null}checked="checked"{/if} />
+					<input type="checkbox" id="accounts-edit-login-ok" name="password[login_ok]" {if $userToEdit->get('password') !== null}checked="checked"{/if} />
 				</label>
 			</div>
 		</div>
 		
-		<div class="form-group {if $userToEdit->get('password') === null}hide{/if}">
+		<div class="form-group hide-unless-login-ok {if $userToEdit->get('password') === null}hide{/if}">
 			<label class="control-label col-lg-3">Reset password:</label>
 			<div class="form-controls col-lg-6">
 				<p><input {if $userToEdit->getID() === $user->getID()}disabled="disabled"{/if} type="password" class="form-control" name="password[new]" placeholder="New password" /></p>
