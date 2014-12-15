@@ -14,6 +14,8 @@ class SignIn extends Framework\AbstractController
 	
 	public function Student()
 	{
+		$this->App->getSessionManager()->assertRole(['administrator', 'leader']);
+		
 		$Smarty = $this->App->getSmarty();
 		$Smarty->assign('page', 'SignIn/Student');
 		$Smarty->display("Page/Barebones.tpl");
@@ -21,6 +23,8 @@ class SignIn extends Framework\AbstractController
 	
 	public function StudentPost()
 	{
+		$this->App->getSessionManager()->assertRole(['administrator', 'leader']);
+		
 		// create attendance record
 		$user = new Models\User($this->App, intval($_POST['user_id']));
 		
@@ -56,6 +60,8 @@ class SignIn extends Framework\AbstractController
 	
 	public function StudentNew()
 	{
+		$this->App->getSessionManager()->assertRole(['administrator', 'leader']);
+		
 		$Smarty = $this->App->getSmarty();
 		
 		if ( !empty($_POST) ) {

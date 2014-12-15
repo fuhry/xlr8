@@ -55,3 +55,9 @@ div.console-buttons a {
 	}
 
 /* Attendance view page */
+
+/* accounts edit page */
+span.accounts-child {
+	width: 15em;
+	text-align: left;
+}

@@ -30,6 +30,9 @@
 					<a href="{$app_root}/Accounts/Edit/{$user->getID()}">
 						<i class="fa fa-child"></i>
 						{$user->get('surname')}, {$user->get('given_name')}
+						{if $user->get('nickname') != null}
+							({$user->get('nickname')|escape:'html'})
+						{/if}
 					</a>
 				</td>
 				<td>

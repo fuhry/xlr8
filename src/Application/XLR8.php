@@ -19,6 +19,8 @@ class XLR8 extends AbstractApplication
 		
 		$this->DB = $DB;
 		$this->SessionManager = new \fuhry\XLR8\SessionManager($this);
+		
+		set_exception_handler([$this, '_handleException']);
 	}
 	
 	public function getName()
@@ -39,7 +41,12 @@ class XLR8 extends AbstractApplication
 		$Smarty->assign('title', $title);
 		$Smarty->assign('body', $body);
 		
-		$Smarty->display('Page/Barebones.tpl');
+		$Smarty->display('Page/Full.tpl');
+	}
+	
+	public function _handleException(\Exception $e)
+	{
+		$this->showError('Exception caught in application', get_class($e) . ': ' . $e->getMessage());
 	}
 	
 	public function getSessionManager()

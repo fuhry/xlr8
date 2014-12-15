@@ -17,7 +17,7 @@
 				Manage users
 			</span>
 			<span class="description">
-				View and edit accounts for leaders and students
+				View and edit accounts for leaders, students and parents
 			</span>
 		</a>
 	</div>

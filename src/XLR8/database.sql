@@ -4,6 +4,7 @@ CREATE TABLE users(
 	user_id int(12) unsigned NOT NULL auto_increment,
 	given_name varchar(64) NOT NULL,
 	surname varchar(64) NOT NULL,
+	nickname varchar(64) DEFAULT NULL,
 	password varchar(256) DEFAULT NULL,
 	email varchar(256) DEFAULT NULL,
 	role ENUM('student', 'parent', 'leader', 'administrator') NOT NULL DEFAULT 'student',

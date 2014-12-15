@@ -3,6 +3,7 @@
 namespace fuhry\XLR8;
 use fuhry\Application;
 use fuhry\XLR8\Models;
+use fuhry\Framework\Exception\SecurityException;
 
 class SessionManager
 {
@@ -49,5 +50,15 @@ class SessionManager
 	public function logout()
 	{
 		session_destroy();
+	}
+	
+	public function assertRole($roles = [])
+	{
+		$user = $this->getLoggedInUser();
+		
+		if ( !in_array($user->get('role'), $roles) ) {
+			$roles = implode(', ', $roles);
+			throw new SecurityException("Current user is not authorized to perform this action. Role \"{$user->get('role')}\" not one of [$roles].");
+		}
 	}
 }

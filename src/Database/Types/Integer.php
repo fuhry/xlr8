@@ -60,7 +60,7 @@ class Integer extends AbstractType
 		}
 		
 		if ( !is_int($value) ) {
-			return false;
+			return is_string($value) && !!preg_match('/^[0-9]+$/', $value);
 		}
 		
 		if ( $value > $this->max || $value < $this->min ) {

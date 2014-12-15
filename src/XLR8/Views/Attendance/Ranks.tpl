@@ -52,7 +52,11 @@
 							<i class="fa fa-child"></i>
 							{$user->get('surname')|escape:'html'},
 							{$user->get('given_name')|escape:'html'}
+							{if $user->get('nickname') != null}
+								({$user->get('nickname')|escape:'html'})
+							{/if}
 						</a>
+						
 						{if $count >= $perfect_threshold}
 							<span class="label label-warning">
 								<i class="fa fa-star"></i>
