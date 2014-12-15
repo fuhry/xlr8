@@ -4,6 +4,22 @@ use fuhry\Framework\Router;
 
 require 'loader.php';
 
+// fix REDIRECT variables
+foreach ( $_SERVER as $key => $value ) {
+	if ( preg_match('/^REDIRECT_/', $key) ) {
+		$newKey = preg_replace('/^(REDIRECT_)+/', '', $key);
+		if ( !isset($_SERVER[$newKey]) ) {
+			$_SERVER[$newKey] =& $_SERVER[$key];
+		}
+	}
+	else if ( preg_match('/^ORIG_/', $key) ) {
+		$newKey = preg_replace('/^(ORIG_)+/', '', $key);
+		if ( !isset($_SERVER[$newKey]) ) {
+			$_SERVER[$newKey] =& $_SERVER[$key];
+		}
+	}
+}
+
 // parse application file
 $application = json_decode(file_get_contents(ROOT . 'application.json'), true);
 

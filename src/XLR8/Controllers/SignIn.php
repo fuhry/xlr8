@@ -44,6 +44,7 @@ class SignIn extends Framework\AbstractController
 			$homework->set('attendance_id', $attendanceID);
 			$homework->set('subject', $subject);
 			$homework->set('amount', intval($amount));
+			$homework->set('need_pc', isset($_POST['pc'][$subject]) ? 1 : 0);
 			$homework->insert();
 		}
 		
