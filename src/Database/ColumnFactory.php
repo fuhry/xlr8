@@ -1,7 +1,7 @@
 <?php
 
 namespace fuhry\Database;
-use fuhry\Framework\Enumerator;
+use Datto\Core\Enumerator;
 
 use InvalidArgumentException;
 
