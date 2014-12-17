@@ -1,23 +1,23 @@
 {
-    "name": "fuhry/xlr8-signin",
-    "description": "Sign-in and attendance system for XLR(8).",
-    "require": {
-        "components/jquery": "1.11.*",
-        "components/bootstrap": "3.3.*",
-        "components/font-awesome": "4.*",
-        "smarty/smarty": "~3.1",
+	"name": "fuhry/xlr8-signin",
+	"description": "Sign-in and attendance system for XLR(8).",
+	"require": {
+		"components/jquery": "1.11.*",
+		"components/bootstrap": "3.3.*",
+		"components/font-awesome": "4.*",
+		"smarty/smarty": "~3.1",
 		"datto/core-enumerator": "dev-master"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "4.3.*"
-    },
-    "license": "GPLv3",
-    "authors": [
-        {
-            "name": "Dan Fuhry",
-            "email": "dan@fuhry.com"
-        }
-    ],
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.3.*"
+	},
+	"license": "GPLv3",
+	"authors": [
+		{
+			"name": "Dan Fuhry",
+			"email": "dan@fuhry.com"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"fuhry\\": "src/",
