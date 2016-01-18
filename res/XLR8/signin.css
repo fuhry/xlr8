@@ -20,17 +20,17 @@ div.signin div.chiclets a.btn {
 	font-family: dejavu sans mono, monospace;
 }
 
-div.signin div.page.homework div.subject {
+div.signin div.page.homework div.form {
 	font-size: 24pt;
 	padding: 30px 0;
 	clear: both;
 }
 
-div.signin div.page.homework div.subject label {
+div.signin div.page.homework div.form label {
 	text-align: left;
 }
 
-div.signin div.page.homework div.subject .btn-group .btn {
+div.signin div.page.homework div.form .btn-group .btn {
 	font-size: 24pt;
 	padding: 7px 14px;
 }
@@ -40,7 +40,7 @@ div.signin div.submission {
 	clear: both;
 }
 
-div.signin div.page.registration div.subject {
+div.signin div.page.registration div.form {
 	padding: 10px 0;
 	clear: both;
 }

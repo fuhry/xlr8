@@ -24,11 +24,26 @@
 	</div>
 	
 	<div class="page homework">
-		<h2>How much homework, <span class="signin-name-placeholder"></span>?</h2>
+		<h2>How's it going, <span class="signin-name-placeholder"></span>?</h2>
 		
-		<div class="homework">
+		<form method="post" enctype="multipart/form-data" action="{$app_root}/SignIn/StudentPost">
+		
+			<div class="mood form">
+				<label class="form-label col-lg-4 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-2 col-xs-6">
+					<span>Mood:</span>
+				</label>
+				<div class="col-lg-6 col-md-7 col-sm-6 col-xs-6 text-left">
+					<div data-toggle="buttons" class="btn-group">
+						<label class="btn btn-danger"        ><input type="radio" name="mood" value="angry"                  />&#x1f624;</label>
+						<label class="btn btn-default"       ><input type="radio" name="mood" value="neutral"                />&#x1f610;</label>
+						<label class="btn btn-info active"   ><input type="radio" name="mood" value="okay" checked="checked" />&#x1f642;</label>
+						<label class="btn btn-success"       ><input type="radio" name="mood" value="great"                  />&#x1f600;</label>
+					</div>
+				</div>
+			</div>
 			
-			<form method="post" enctype="multipart/form-data" action="{$app_root}/SignIn/StudentPost">
+			<div class="homework">
+				
 				{include file="SignIn/Subjects.tpl"}
 				
 				<div class="text-center submission">
@@ -36,9 +51,9 @@
 					<input type="submit" class="btn btn-primary btn-lg" value="All done &ndash; sign in" />
 					<a class="btn btn-danger btn-lg" href="{$app_root}/SignIn/Student">Go back</a>
 				</div>
-			</form>
-			
-		</div>
+			</div>
+		
+		</form>
 	</div>
 </div>
 

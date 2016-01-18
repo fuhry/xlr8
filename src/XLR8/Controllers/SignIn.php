@@ -34,6 +34,7 @@ class SignIn extends Framework\AbstractController
 			$attendance->set('user_id', intval($_POST['user_id']));
 			$attendance->set('date', date('Y-m-d'));
 			$attendance->set('behavior_score', 5);
+			$attendance->set('mood', $_POST['mood']);
 			$attendance->insert();
 		
 			$attendanceID = $attendance->getID();
