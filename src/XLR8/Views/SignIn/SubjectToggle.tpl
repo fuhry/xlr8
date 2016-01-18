@@ -4,8 +4,4 @@
 		<label class="btn btn-default"><input type="radio" name="subject[{$subject}]" value="1" />A little</label>
 		<label class="btn btn-default"><input type="radio" name="subject[{$subject}]" value="2" />A lot</label>
 	</div>
-	
-	<div data-toggle="buttons" class="btn-group">
-		<label class="btn btn-primary"><input type="checkbox" name="pc[{$subject}]" value="true" /><i class="fa fa-desktop"></i> Need PC</label>
-	</div>
 </div>

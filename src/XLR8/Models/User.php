@@ -18,7 +18,7 @@ class User extends Framework\AbstractModel
 	public static function getStudentsStartingWithLetter(Application\XLR8 $App, $letter)
 	{
 		if ( strlen($letter) !== 1 ) {
-			throw new InvalidArgumentException("Please provide a single lowercase letter");
+			throw new \InvalidArgumentException("Please provide a single lowercase letter");
 		}
 		
 		$letter = strtolower($letter);

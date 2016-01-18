@@ -82,14 +82,16 @@ class Attendance extends Framework\AbstractController
 				throw new Database\Exception($stmt);
 			}
 			
-			$records = $students = [];
+			$records = $students = $homework = [];
 			while ( $row = $stmt->fetch($DB::FETCH_ASSOC) ) {
 				$records[] = new Models\Attendance($this->App, $row);
 				$students[ intval($row['user_id']) ] = new Models\User($this->App, $row);
+				$homework[ intval($row['user_id']) ] = Models\HomeworkLog::getByAttendanceID($this->App, intval($row['record_id']));
 			}
 			
 			$Smarty->assign('records', $records);
 			$Smarty->assign('students', $students);
+			$Smarty->assign('homework', $homework);
 		}
 		$Smarty->display("Page/Full.tpl");
 	}

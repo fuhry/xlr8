@@ -15,7 +15,9 @@
 	<thead>
 		<tr>
 			<th>Name</th>
+			<th>Mood</th>
 			<th>Behavior score</th>
+			<th>Homework subjects</th>
 			<th>Notes</th>
 			<th class="actions">
 				<i class="fa fa-cog"></i>
@@ -36,7 +38,21 @@
 					</a>
 				</td>
 				<td>
+					{if $record->get('mood')}
+						{$moods[ $record->get('mood') ]['emoji']}
+						{$moods[ $record->get('mood') ]['description']}
+					{else}
+						<em>Not recorded</em>
+					{/if}
+				</td>
+				<td>
 					{$record->get('behavior_score')}
+				</td>
+				<td>
+					{assign var=i value=0}
+					{foreach $homework[$user->getID()] as $hw}{if $i++ > 0}, {/if}{$hw->get('subject')}{foreachelse}
+						<em>None</em>
+					{/foreach}
 				</td>
 				<td>
 					{if $record->get('notes') != ''}

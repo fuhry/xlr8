@@ -80,6 +80,29 @@ class XLR8 extends AbstractApplication
 			$_SESSION['messages'] = [];
 		}
 		
+		$Smarty->assign('moods', [
+				'angry' => [
+					'description' => 'Grouchy',
+					'emoji' => '&#x1f624;',
+					'btn' => 'danger'
+				],
+				'neutral' => [
+					'description' => 'Meh.',
+					'emoji' =>'&#x1f610;',
+					'btn' => 'default'
+				],
+				'okay' => [
+					'description' => 'Alright',
+					'emoji' => '&#x1f642;',
+					'btn' => 'info'
+				],
+				'great' => [
+					'description' => 'Awesome!',
+					'emoji' => '&#x1f600;',
+					'btn' => 'success'
+				]
+			]);
+		
 		$Smarty->assign('message_levels', [
 				E_NOTICE => 'success',
 				E_WARNING => 'warning',
