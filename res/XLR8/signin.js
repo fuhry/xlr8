@@ -34,12 +34,28 @@ function selectLetter()
 			for ( var i = 0; i < result.length; i++ ) {
 					var $btn = $('<a />'),
 						user = result[i];
-						
+					
+					var gn = user.given_name;
+					for ( var j = 0; j < result.length; j++ ) {
+						if ( j == i ) {
+							continue;
+						}
+						if ( result[j].given_name === gn ) {
+							var buf = result[j].given_name + ' ';
+							gn += ' ';
+							for ( var k = 0; buf === gn; k++ ) {
+								buf += result[j].surname.charAt(k);
+								gn += user.surname.charAt(k);
+							}
+							gn += '.';
+						}
+					}
+					
 					$btn
 						.addClass('btn')
 						.addClass('btn-default')
 						.addClass('btn-lg')
-						.text(user.given_name)
+						.text(gn)
 						.click(selectName)
 						.data('user', user);
 						
